@@ -118,14 +118,31 @@ public class RegexValidation {
             System.out.println("Invaild, please enter one number and minimum 8 character");
         }
     }
+    public static void passwordRule4() {
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])[a-zA-Z0-9@#$%^&+=]{8,}$";
+        System.out.println("Enter the Password");
+        String passWord = scanner.next();
+
+        Pattern pattern4 = Pattern.compile(PasswordPattern);
+        Matcher matcher4 = pattern4.matcher(passWord);
+        Boolean result4 = matcher4.matches();
+
+        if (result4 == true) {
+            System.out.println("Password is valid");
+        } else {
+            System.out.println("Invaild, please enter one number and minimum 8 character");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to Regex : ");
-       // firstName();//UC1
-        //lastName();//UC2
-        //email();//UC3
-        //mobileNumber();//UC4
+        firstName();//UC1
+        lastName();//UC2
+        email();//UC3
+        mobileNumber();//UC4
         passwordRule1();//UC5
         passwordRule2();//UC6
         passwordRule3();//UC7
+        passwordRule4();//UC8
     }
 }
