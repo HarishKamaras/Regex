@@ -69,11 +69,29 @@ public class RegexValidation {
             System.out.println("Mobile number is invalid");
         }
     }
+    public static void passwordRule1(){
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern="[a-zA-Z0-9~!@#$]{8,}";
+        System.out.println("Enter the Password");
+        String passWord=scanner.next();
+
+        Pattern pattern4=Pattern.compile(PasswordPattern);
+        Matcher matcher4=pattern4.matcher(passWord);
+        Boolean result4=matcher4.matches();
+
+        if(result4==true){
+            System.out.println("Password is valid");
+        }else{
+            System.out.println("Invaild, please enter minimum 8 character");
+        }
+
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to Regex : ");
         firstName();//UC1
         lastName();//UC2
         email();//UC3
         mobileNumber();//UC4
+        passwordRule1();//UC5
     }
 }
