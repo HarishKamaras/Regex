@@ -38,10 +38,25 @@ public class RegexValidation {
         else
             System.out.println("Last Name is Invalid");
     }
+    public static void email(){
+        String emailPattern= "[a-zA-Z0-9]+[.+-]{0,1}[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.a-z]{0,4}";
+        System.out.println("Enter your Email:");
+        Scanner scanner = new Scanner(System.in);
+        String email = scanner.next();
 
+        Pattern pattern2=Pattern.compile(emailPattern);
+        Matcher matcher2=pattern2.matcher(email);
+        boolean result2=matcher2.matches();
+
+        if(result2== true){
+            System.out.println("true");
+        }else{
+            System.out.println("Email is not valid");
+        }}
     public static void main(String[] args) {
         System.out.println("Welcome to Regex : ");
         firstName();//UC1
         lastName();//UC2
+        email();//UC3
     }
 }
