@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexValidation {
-    public static void userFirstName() {
+    public static void firstName() {
 
         String firstNamePattern = "[A-Z]{1}[a-z]{2,}";
         Scanner scanner = new Scanner(System.in);
@@ -22,8 +22,10 @@ public class RegexValidation {
         else
             System.out.println("First Name is Invalid");
     }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Regex : ");
-        userFirstName();
+        firstName();
+
     }
 }
